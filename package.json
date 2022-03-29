@@ -9,11 +9,12 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
@@ -32,17 +33,19 @@
     "firebase": "^8.6.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@angular/cli": "^13.3.0",
+    "@angular/compiler-cli": "^13.2.7"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.3",
-    "@angular/cli": "~13.2.3",
-    "@angular/compiler-cli": "~13.2.2",
     "@angular-eslint/builder": "~13.0.1",
     "@angular-eslint/eslint-plugin": "~13.0.1",
     "@angular-eslint/eslint-plugin-template": "~13.0.1",
     "@angular-eslint/template-parser": "~13.0.1",
+    "@angular/cli": "^13.3.0",
     "@angular/compiler": "~13.2.2",
+    "@angular/compiler-cli": "^13.2.7",
     "@angular/language-service": "~13.2.2",
     "@capacitor/cli": "3.4.3",
     "@ionic/angular-toolkit": "^6.0.0",
