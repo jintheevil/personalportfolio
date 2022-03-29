@@ -50,9 +50,9 @@
             <div [ngStyle]="{height : platform.height() < 769 ? '250px' : 'auto'}" style="overflow: auto;">
               <div *ngFor="let eve of skillStack" style="display: flex; align-items: center; margin-bottom: 16px;">
                 <div style="height: 32px; width: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 8px;">
-                  <img [ngClass]="counter > 0 ? 'testTextL' : 'xtestTextL'" style="height: 100%; width: 100%; object-fit: cover;" src="{{eve.img}}" alt="">
+                  <img style="height: 100%; width: 100%; object-fit: cover;" src="{{eve.img}}" alt="">
                 </div>
-                <div [ngClass]="counter > 0 ? 'testTextL' : 'xtestTextL'" style="font-size: 18px; color: #1F456E">- {{eve.name}}</div>
+                <div style="font-size: 18px; color: #1F456E">- {{eve.name}}</div>
               </div>
             
             <div style="display: flex; align-items: center; margin-bottom: 8px">
