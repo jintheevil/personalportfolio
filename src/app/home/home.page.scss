@@ -1,0 +1,144 @@
+.header{
+  padding: 8px 15vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:  #7b9fcf;
+}
+
+.ibigText{
+  font-size: 17px;
+  font-weight: 600;
+  font-family: 'aliquam-regular', sans-serif;
+}
+
+.secondText{
+  font-size: 15px;
+  font-family: 'aliquam-regular', sans-serif;
+}
+
+.normText{
+  font-size: 13px;
+  font-family: 'aliquam-regular', sans-serif;
+}
+
+.h1{
+  font-size: 32px;
+  font-family: 'aliquam-regular', sans-serif;
+}
+
+.h2{
+  font-size: 24px;
+  font-family: 'aliquam-regular', sans-serif;
+}
+
+.backgCircle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #5575A2;
+  margin-right: 16px;
+}
+
+.menuC{
+  padding: 8px 16px;
+  position: relative;
+  text-align: center;
+  font-family: 'aliquam-regular', sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #c6d1e7
+}
+
+.menuC:hover {
+  color: #dddddd;
+  transition: all 0.4s ease;
+  cursor: pointer
+}
+
+.chosenMenu{
+  padding: 8px 16px;
+  position: relative;
+  text-align: center;
+  font-family: 'aliquam-regular', sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+  color: #ffffff; 
+  cursor: pointer
+}
+
+.line{
+  position: absolute;
+  bottom: 0px;
+  width: 80%;
+  height: 2px;
+  background: #cacaca;
+  transition: width 0.5s ease;
+}
+
+.xline{
+  position: absolute;
+  bottom: 0px;
+  width: 0;
+  height: 2px;
+  background: #cacaca;
+  transition: width 0.5s ease;
+}
+
+.contactButton{
+  width: 18vw;
+  padding: 8px;
+  text-align: center;
+  margin-top: 22px;
+  border: 1px solid #fafafa;
+  color: #fafafa; 
+  font-size: 20px;
+  font-family: 'aliquam-regular', sans-serif;
+}
+
+.contactButton:hover {
+  border: 1px solid #fafafa;
+  color: #7b9fcf;
+  background: #fafafa;
+  font-size: 20px;
+  font-family: 'aliquam-regular', sans-serif;
+  transition: border 0.3s ease, background 0.4s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.testText{
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.4s ease, opacity 0.8s ease; 
+}
+
+.xtestText{
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.testTextL{
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.4s ease, opacity 0.8s ease;
+}
+
+.xtestTextL{
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.upper{
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 0.8s ease, opacity 0.6s ease;
+}
+
+.upperX{
+  transform: translateY(-100);
+  opacity: 0;
+}
