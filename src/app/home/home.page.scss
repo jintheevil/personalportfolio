@@ -142,3 +142,23 @@
   transform: translateY(-100);
   opacity: 0;
 }
+
+.contactText{
+  font-size: 24px;
+}
+
+.contactText:hover {
+  color: #999999;
+  transition: all 0.4s ease;
+}
+
+.scaling{
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.8s ease, opacity 0.6s ease;
+}
+
+.scalingX{
+  transform: scale(0);
+  opacity: 0;
+}

@@ -49,6 +49,19 @@ export class HomePage implements OnInit{
       console.log(this.counter)
     }, 500)
   }
+
+  contactMe(){
+    this.counter = 0
+    setTimeout(() => {
+      this.counter += 1
+      console.log(this.counter)
+    }, 500)
+    this.chosenMenu = 'contact'
+    this.ionContent.scrollToPoint(
+      0,
+      document.getElementById('contact').offsetTop, 400
+    )
+  }
   
   ngOnInit(){
     this.counter = 0
