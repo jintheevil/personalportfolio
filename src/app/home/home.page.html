@@ -4,20 +4,31 @@
 </head>
 
 <ion-header class="ion-no-border">
-  <div class="header">
-    <div style="display: flex; align-items: center;">
-      <img style="height: 80px; width: auto" src="/assets/icon/logo_size.jpg" alt="">
-    </div>
-    <div style="display: flex;">
-      <div (click)="changeMenu(eve)" [ngClass]="chosenMenu == eve.toLowerCase() ? 'chosenMenu': 'menuC'" *ngFor="let eve of menu">
-        {{eve}}
-      </div>
-
-    </div>
-  </div>
+  
+  
 </ion-header>
 
-<ion-content>
+<ion-content style="position: relative">
+
+  <div style="position: sticky; top: 0px; z-index: 100;">
+    <div *ngIf="platform.width() > 769" class="header" style="padding: 8px 15vw">
+      <div style="display: flex; align-items: center;">
+        <img style="height: 100px; width: auto" src="/assets/icon/elLogoInvert.png" alt="">
+      </div>
+      <div style="display: flex;">
+        <div (click)="changeMenu(eve)" [ngClass]="chosenMenu == eve.toLowerCase() ? 'chosenMenu': 'menuC'" *ngFor="let eve of menu">
+          {{eve}}
+        </div>
+  
+      </div>
+    </div>
+  
+    <div *ngIf="platform.width() < 769" class="header" style="padding: 8px 16px">
+        <div (click)="changeMenu(eve)" [ngClass]="chosenMenu == eve.toLowerCase() ? 'chosenMenu': 'menuC'" *ngFor="let eve of menu">
+          {{eve}}
+        </div>
+    </div>
+  </div>
 
   <div id="home" class="page" style="height: calc( 100vh - 96px); width: 100%; position: relative;">
     <div
@@ -25,20 +36,27 @@
     </div>
     <div [ngClass]="counter > 0 ? 'upper' : 'upperX'"
       style="position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; z-index: 3; background: none; padding: 32px; color: #fafafa; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-      <img style="height: 250px; width: auto" src="/assets/kid_job_boy_programmer.png" alt="">
-      <h1 class="h1" style="color: #fafafa; font-size: 48px">Hi, I'm Eugene from Malaysia</h1>
-      <h2 class="h2" style="color: #fafafa;">and I'm a self-taught UI/UX designer / front-end developer.</h2>
-      <div (click)="contactMe()" class="contactButton">Contact me!</div>
+      <div style="display: flex; align-items: center; margin-bottom: 24px;">
+        <div class="h">H</div>
+        <div class="e">E</div>
+        <div class="l1">L</div>
+        <div class="l2">L</div>
+        <div class="o">O</div>
+      </div>
+      <img [ngStyle]="{'height': platform.width() > 1181 ? '25vh' : '100px'}" style="width: auto" src="/assets/kid_job_boy_programmer.png" alt="">
+      <h1 class="h1" [ngStyle]="{'font-size': platform.width() > 1181 ? '40px' : '24px'}" style="color: #fafafa; font-size: 48px">Hi, I'm Eugene from Malaysia</h1>
+      <h2 class="h2" [ngStyle]="{'font-size': platform.width() > 1181 ? '36px' : '20px'}" style="color: #fafafa;">and I'm a self-taught UI/UX designer / front-end developer.</h2>
+      <div [ngClass]="platform.width() > 1181 ? 'contactButton' : 'contactButton2'" (click)="contactMe()">Contact me!</div>
 
     </div>
   </div>
 
   <div id="about" class="page" style="height: calc( 100vh - 96px); width: 100%; background: #fafafa; display: flex; flex-direction: column; align-items: center;">
     <div style="padding: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
-      <h1 [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="font-size: 32px; font-weight: 600; color: #7b9fcf">About me</h1>
-      <p [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="font-size: 20px; font-weight: 100; color: #7b9fcf">Just someone who loves to code.</p>
+      <div><h1 [ngClass]="counter > 0 ? 'testText2' : 'xtestText'" style="font-size: 32px; font-weight: 600; color: #333333">About me</h1></div>
+      <p [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="font-size: 20px; font-weight: 300; color: #333333">Just someone who loves to code.</p>
     </div>
-    <div [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="display: flex; justify-content: center; align-items: center; background: #F9F8FF; border-radius: 10px; width: fit-content; padding: 16px; border: 2px solid #333333;">
+    <div *ngIf="platform.width() > 1181" [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="display: flex; justify-content: center; align-items: center; background: #F9F8FF; border-radius: 10px; width: fit-content; padding: 16px; border: 2px solid #333333;">
       <div style="width: 30vw;margin-right: 6vw">
         <div [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="transition-delay: 0.1s; font-size: 20px; color: #555555; margin-right: -150px">Born and raised in Malaysia,
           I've always been facinated with the world of IT but never really stepped into it untill the age of 24. Since then,
@@ -47,7 +65,7 @@
           <h2 [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="font-size: 22px; margin-bottom: 24px; transition-delay: 0.15; color: #7b9fcf">Through my learning experience, my
             skillstack now includes:</h2>
           
-            <div [ngStyle]="{height : platform.height() < 769 ? '250px' : 'auto'}" style="overflow: auto;">
+            <div [ngStyle]="{height : platform.height() < 768 ? '250px' : 'auto'}" style="overflow: auto;">
               <div *ngFor="let eve of skillStack" style="display: flex; align-items: center; margin-bottom: 16px;">
                 <div style="height: 32px; width: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 8px;">
                   <img style="height: 100%; width: 100%; object-fit: cover;" src="{{eve.img}}" alt="">
@@ -61,20 +79,45 @@
             </div>
       </div>
       <div style="width: 30vw">
-        <img [ngStyle]="{height: platform.height > 768 ? '300px' : '300px'}" style="border-bottom-left-radius: 12vh; border-bottom-right-radius: 12vh; margin-top: 88px; width: auto;" src="/assets/job_programmer.png" alt="">
+        <img [ngStyle]="{height: platform.height > 820 ? '300px' : '300px'}" style="border-bottom-left-radius: 12vh; border-bottom-right-radius: 12vh; margin-top: 88px; width: auto;" src="/assets/job_programmer.png" alt="">
       </div>
       
     </div>
+
+    <div *ngIf="platform.width() < 1181" [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="display: flex; justify-content: center; align-items: center; border-radius: 10px; width: fit-content; padding: 16px">
+      <div>
+        <div [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="transition-delay: 0.1s; font-size: 15px; color: #555555;">Born and raised in Malaysia,
+          I've always been facinated with the world of IT but never really stepped into it untill the age of 24. Since then,
+          I have been learning new and better ways to code everyday while getting whatever work experience I can grasp my
+          hands on.</div>
+          <h2 [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="font-size: 17px; margin-bottom: 24px; transition-delay: 0.15; color: #7b9fcf">Through my learning experience, my
+            skillstack now includes:</h2>
+          
+            <div [ngStyle]="{height : platform.height() < 769 ? '250px' : 'auto'}">
+              <div *ngFor="let eve of skillStack" style="display: flex; align-items: center; margin-bottom: 16px;">
+                <div style="height: 32px; width: 32px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-right: 8px;">
+                  <img style="height: 100%; width: 100%; object-fit: cover;" src="{{eve.img}}" alt="">
+                </div>
+                <div style="font-size: 18px; color: #1F456E">- {{eve.name}}</div>
+              </div>
+            
+            <div style="display: flex; align-items: center; margin-bottom: 8px">
+              <div style="font-size: 28px; color: #7b9fcf">- and the stack goes on!</div>
+            </div>
+            </div>
+      </div>
+    </div>
   </div>
 
-  <div id="projects" class="page" style="height: calc( 100vh - 96px ); width: 100%; background: #7b9fcf"></div>
+  <div id="projects" class="page" style="height: calc( 100vh - 96px ); width: 100%; background: #7b9fcf;"></div>
 
-  <div id="contact" class="page" style="height: calc( 100vh - 96px); width: 100%; background: #fafafa; display: flex; flex-direction: column; align-items: center;">
+  <div id="contact" class="page" style="height: calc( 100vh - 96px); width: 100%; background: #fafafa; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
     <div style="padding: 16px; display: flex; flex-direction: column; align-items: center; width: 100%; background: #7b9fcf; border-bottom-left-radius: 50%; border-bottom-right-radius: 50%;">
-      <h1 [ngClass]="counter > 0 ? 'testText' : 'xtestText'" style="font-size: 32px; font-weight: 600; color: #fafafa">Contact me</h1>
+      <div><h3 [ngClass]="counter > 0 ? 'testText3' : 'xtestText'" style="font-size: 32px; font-weight: 600; color: #fafafa; margin-bottom: 16px">Contact me</h3></div>
       <img [ngClass]="counter > 0 ? 'upper' : 'upperX'" style="height: 15vh; width: auto;" src="/assets/work together.png" alt="">
     </div>
-    <div [ngClass]="counter > 0 ? 'scaling' : 'scalingX'" style="height: 320px; width: 720px; background: #fafafa; border-radius: 15px; border: 5px solid #333333; margin-top: 32px; display: flex; flex-direction: column; justify-content: space-between; padding: 16px;">
+
+    <div *ngIf="platform.width() > 1181" [ngClass]="counter > 0 ? 'scaling' : 'scalingX'" style="height: 320px; width: 720px; background: #fafafa; border-radius: 15px; border: 5px solid #333333; display: flex; flex-direction: column; justify-content: space-between; padding: 16px;">
       <div style="display: flex; align-items: center;">
         <ion-icon style="font-size: 32px; margin-right: 16px" name="logo-facebook"></ion-icon>
         <a class="contactText" href="https://www.facebook.com/jinthepotatasGFY/">Eugene Lim</a>
@@ -92,7 +135,29 @@
         <div class="contactText">+6012-321-3929</div>
       </div>
     </div>
-    <div style="width: 100%; height: 100px; border-top-left-radius: 50%; border-top-right-radius: 50%; background: #B0CEFF; margin-top: auto"></div>
+
+    <div *ngIf="platform.width() < 1181" style="padding: 0px 16px; display: flex; justify-content: center;">
+      <div [ngClass]="counter > 0 ? 'scaling' : 'scalingX'" style="height: 320px; width: calc(100vw - 32px); background: #fafafa; border-radius: 15px; border: 5px solid #333333; display: flex; flex-direction: column; padding: 16px;">
+        <div style="display: flex; align-items: center; margin-bottom: 24px">
+          <ion-icon style="font-size: 24px; margin-right: 8px;" name="logo-facebook"></ion-icon>
+          <a class="contactText" href="https://www.facebook.com/jinthepotatasGFY/">Eugene Lim</a>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 24px">
+          <ion-icon style="font-size: 24px; margin-right: 8px" name="logo-github"></ion-icon>
+          <a class="contactText" href="https://github.com/jintheevil">JinTheEvil</a>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 24px">
+          <ion-icon style="font-size: 24px; margin-right: 8px" name="mail-outline"></ion-icon>
+          <div style="overflow: auto;" class="contactText">eugenelimjq1217@gmail.com</div>
+        </div>
+        <div style="display: flex; align-items: center; margin-bottom: 24px">
+          <ion-icon style="font-size: 24px; margin-right: 8px" name="call-outline"></ion-icon>
+          <div class="contactText">+6012-321-3929</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="width: 100%; height: 100px; border-top-left-radius: 50%; border-top-right-radius: 50%; background: #B0CEFF;"></div>
   </div>
 
 </ion-content>

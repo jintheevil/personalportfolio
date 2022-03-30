@@ -41,7 +41,7 @@ export class HomePage implements OnInit{
   changeMenu(x){
     this.ionContent.scrollToPoint(
       0,
-      document.getElementById(x.toLowerCase()).offsetTop, 400
+      document.getElementById(x.toLowerCase()).offsetTop - 96,400
     )
     this.counter = 0
     setTimeout(() => {
@@ -59,11 +59,12 @@ export class HomePage implements OnInit{
     this.chosenMenu = 'contact'
     this.ionContent.scrollToPoint(
       0,
-      document.getElementById('contact').offsetTop, 400
+      document.getElementById('contact').offsetTop - 96, 400
     )
   }
   
   ngOnInit(){
+    console.log(this.platform.height())
     this.counter = 0
     setTimeout(() => {
       this.counter += 1
