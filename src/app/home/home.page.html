@@ -12,8 +12,8 @@
 
   <div style="position: sticky; top: 0px; z-index: 100;">
     <div *ngIf="platform.width() > 769" class="header" style="padding: 8px 15vw">
-      <div style="display: flex; align-items: center;">
-        <img style="height: 100px; width: auto" src="/assets/icon/elLogoInvert.png" alt="">
+      <div style="display: flex; align-items: center; position: relative">
+        <img style="height: 165px; width: auto; " src="/assets/icon/elLogoInvert.png" alt="">
       </div>
       <div style="display: flex;">
         <div (click)="changeMenu(eve)" [ngClass]="chosenMenu == eve.toLowerCase() ? 'chosenMenu': 'menuC'" *ngFor="let eve of menu">
@@ -119,19 +119,19 @@
 
     <div *ngIf="platform.width() > 1181" [ngClass]="counter > 0 ? 'scaling' : 'scalingX'" style="height: 320px; width: 720px; background: #fafafa; border-radius: 15px; border: 5px solid #333333; display: flex; flex-direction: column; justify-content: space-between; padding: 16px;">
       <div style="display: flex; align-items: center;">
-        <ion-icon style="font-size: 32px; margin-right: 16px" name="logo-facebook"></ion-icon>
+        <ion-icon class="logo" name="logo-facebook"></ion-icon>
         <a class="contactText" href="https://www.facebook.com/jinthepotatasGFY/">Eugene Lim</a>
       </div>
       <div style="display: flex; align-items: center;">
-        <ion-icon style="font-size: 32px; margin-right: 16px" name="logo-github"></ion-icon>
+        <ion-icon class="logo" name="logo-github"></ion-icon>
         <a class="contactText" href="https://github.com/jintheevil">JinTheEvil</a>
       </div>
       <div style="display: flex; align-items: center;">
-        <ion-icon style="font-size: 32px; margin-right: 16px" name="mail-outline"></ion-icon>
+        <ion-icon class="logo" name="mail-outline"></ion-icon>
         <div class="contactText">eugenelimjq1217@gmail.com</div>
       </div>
       <div style="display: flex; align-items: center;">
-        <ion-icon style="font-size: 32px; margin-right: 16px" name="call-outline"></ion-icon>
+        <ion-icon class="logo" name="call-outline"></ion-icon>
         <div class="contactText">+6012-321-3929</div>
       </div>
     </div>
@@ -139,19 +139,19 @@
     <div *ngIf="platform.width() < 1181" style="padding: 0px 16px; display: flex; justify-content: center;">
       <div [ngClass]="counter > 0 ? 'scaling' : 'scalingX'" style="height: 320px; width: calc(100vw - 32px); background: #fafafa; border-radius: 15px; border: 5px solid #333333; display: flex; flex-direction: column; padding: 16px;">
         <div style="display: flex; align-items: center; margin-bottom: 24px">
-          <ion-icon style="font-size: 24px; margin-right: 8px;" name="logo-facebook"></ion-icon>
+          <ion-icon class="logoS" name="logo-facebook"></ion-icon>
           <a class="contactText" href="https://www.facebook.com/jinthepotatasGFY/">Eugene Lim</a>
         </div>
         <div style="display: flex; align-items: center; margin-bottom: 24px">
-          <ion-icon style="font-size: 24px; margin-right: 8px" name="logo-github"></ion-icon>
+          <ion-icon class="logoS" name="logo-github"></ion-icon>
           <a class="contactText" href="https://github.com/jintheevil">JinTheEvil</a>
         </div>
         <div style="display: flex; align-items: center; margin-bottom: 24px">
-          <ion-icon style="font-size: 24px; margin-right: 8px" name="mail-outline"></ion-icon>
+          <ion-icon class="logoS" name="mail-outline"></ion-icon>
           <div style="overflow: auto;" class="contactText">eugenelimjq1217@gmail.com</div>
         </div>
         <div style="display: flex; align-items: center; margin-bottom: 24px">
-          <ion-icon style="font-size: 24px; margin-right: 8px" name="call-outline"></ion-icon>
+          <ion-icon class="logoS" name="call-outline"></ion-icon>
           <div class="contactText">+6012-321-3929</div>
         </div>
       </div>

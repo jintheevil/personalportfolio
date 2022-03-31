@@ -206,11 +206,24 @@
 
 .contactText{
   font-size: 24px;
+  color: #333333
 }
 
 .contactText:hover {
   color: #999999;
   transition: all 0.4s ease;
+}
+
+.logo{
+  font-size: 32px;
+  color: #333333;
+  margin-right: 16px
+}
+
+.logoS{
+  font-size: 24px;
+  color: #333333;
+  margin-right: 8px
 }
 
 .scaling{
@@ -242,21 +255,21 @@
 }
 
 .h{
-  animation: bounce 1.3s ease infinite;
+  animation: bounce 1.3s ease 2;
 }
 
 .e{
-  animation: bounce 1.3s ease infinite .1s;
+  animation: bounce 1.3s ease 2 .1s;
 }
 
 .l1{
-  animation: bounce 1.3s ease infinite .2s;
+  animation: bounce 1.3s ease 2 .2s;
 }
 
 .l2{
-  animation: bounce 1.3s ease infinite .3s;
+  animation: bounce 1.3s ease 2 .3s;
 }
 
 .o{
-  animation: bounce 1.3s ease infinite .4s;
+  animation: bounce 1.3s ease 2 .4s;
 }
